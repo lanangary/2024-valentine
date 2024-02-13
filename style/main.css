@@ -1,0 +1,201 @@
+.container
+{
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container.inner{
+      display: flex;
+    flex-direction: column;
+}
+
+.container.loading{
+    height: 100vh;
+    width: 100%;
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease-in-out;
+    opacity: 1;
+}
+
+.container.loading.loaded{
+    opacity: 1;
+}
+
+.love-line {
+    width: 100%;
+}
+.love-line .svg{
+      width: 100%;
+}
+
+body{
+  background-color: #f5f5f5;
+}
+@keyframes scale{
+  from{
+    transform: scale(1) rotate(-45deg)
+  }
+  12.5%{
+    transform: scale(1.2) rotate(-45deg)
+  }
+  25%{
+    transform: scale(1) rotate(-45deg)
+  }
+  37.5%{
+  transform: scale(1.2) rotate(-45deg)
+  }
+  50%{
+    transform: scale(1) rotate(-45deg)
+  }
+  100%{
+    transform: scale(1) rotate(-45deg)
+  }
+}
+
+.w{
+width: 100px;
+height: 100px;
+background-color: pink;
+  transform: rotate(-45deg);
+  animation-name: scale;
+  animation-iteration-count: infinite;
+  animation-duration: 0.8s;
+  margin: auto;
+  margin-top: 200px;
+}
+.w::before,
+.w::after{
+  display: block;
+  content: "";
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: pink;
+  position: relative;
+}
+.w::before{
+  top: -50px;
+}
+.w::after{
+
+  left: 50px;
+  top: -100px;
+}
+
+
+/* loveline */
+
+
+svg #line {
+  fill: none;
+  stroke: #e00000;
+  stroke-width: 1.5;
+  stroke-linecap: butt;
+  stroke-linejoin: round;
+  stroke-miterlimit: 4;
+
+  stroke-opacity: 1;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: dash 3s linear infinite;
+}
+svg #point {
+  fill: none;
+  stroke: #f00000;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: .1;
+  stroke-opacity: 1;
+  stroke-dasharray: .0001, .9999;
+  stroke-dashoffset: 1;
+  animation: dash 3s linear infinite;
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 1;
+  }
+  80% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+/* spinner */
+
+.spinner{
+
+}
+
+.spinner-wrap img{
+
+    mix-blend-mode : multiply
+}
+
+.spinner-button{
+  margin-top: 60px;
+}
+
+.btn-spin{
+      width: 200px;
+    height: 50px;
+}
+
+.spinner-arrow img{
+      width: 75px;
+    height: auto;
+    object-fit: cover;
+    rotate: 90deg;
+    mix-blend-mode : multiply
+}
+
+.hidden-form{
+  opacity: 0;
+}
+
+.roulette{
+  width: 300px;
+    height: auto;
+
+    transition: all 8.5s ease-in-out;
+}
+
+.roulette.spin{
+  /* rotate 7 times */
+  transform: rotate(2520deg);
+}
+
+
+
+
+.popup{
+      position: fixed;
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    bottom: -100%;
+    color: #000000;
+    background: #ffffff;
+
+}
+
+.popup.active{
+      bottom: 0;
+}
+
+.here{
+  font-size: 24px;
+}
